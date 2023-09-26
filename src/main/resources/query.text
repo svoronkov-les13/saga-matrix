@@ -1,0 +1,31 @@
+select
+count(section.id) as s_count, group_concat(saga.name), section.type, jhi_order
+from
+section left join saga on section.saga_id = saga.id
+where saga.id in (1003, 1002)
+group by section.type
+having s_count>1
+order by jhi_order
+
+select
+count(section.id) as s_count, group_concat(saga.name), section.type, jhi_order
+from
+section left join saga on section.saga_id = saga.id
+where saga.id in (1003, 1002)
+group by section.type
+order by jhi_order
+
+select
+count(section.id) as s_count, group_concat(saga.name), section.type, jhi_order
+from
+section left join saga on section.saga_id = saga.id
+group by section.type
+order by jhi_order
+
+select
+count(section.id) as s_count, group_concat(CONCAT(saga.id, saga.name, ' | ') SEPARATOR ' '), section.type, jhi_order
+from
+section join saga on section.saga_id = saga.id
+group by section.type, jhi_order
+having s_count>1
+order by s_count desc, jhi_order

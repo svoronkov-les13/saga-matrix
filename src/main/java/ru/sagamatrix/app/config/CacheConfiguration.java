@@ -48,6 +48,13 @@ public class CacheConfiguration {
             createCache(cm, ru.sagamatrix.app.domain.User.class.getName());
             createCache(cm, ru.sagamatrix.app.domain.Authority.class.getName());
             createCache(cm, ru.sagamatrix.app.domain.User.class.getName() + ".authorities");
+            createCache(cm, ru.sagamatrix.app.domain.Saga.class.getName());
+            createCache(cm, ru.sagamatrix.app.domain.Section.class.getName());
+            createCache(cm, ru.sagamatrix.app.domain.Section.class.getName() + ".names");
+            createCache(cm, ru.sagamatrix.app.domain.Saga.class.getName() + ".names");
+            createCache(cm, ru.sagamatrix.app.domain.Saga.class.getName() + ".ids");
+            createCache(cm, ru.sagamatrix.app.domain.Saga.class.getName() + ".sections");
+            createCache(cm, ru.sagamatrix.app.domain.Saga.class.getName() + ".sagas");
             // jhipster-needle-ehcache-add-entry
         };
     }
